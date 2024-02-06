@@ -5,7 +5,7 @@ export default function Footer() {
     <div id="footer" className="w-full flex flex-col items-start md:items-center">
       <p className="text-3xl font-medium text-red-500">CONTACT US</p>
       <h1 className="text-[55px] font-medium tracking-tight leading-[60px] my-4">
-        Let's connect
+      Let's connect
       </h1>
       <div className="flex md:flex-row flex-col items-start md:gap-10">
         <button className="md:my-10 bg-gradient-to-br from-yellow-500 to-red-600 text-black font-semibold px-7 py-2.5 md:text-2xl text-xl rounded">

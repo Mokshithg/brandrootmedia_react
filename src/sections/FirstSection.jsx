@@ -44,42 +44,38 @@ const brands = [
 ];
 
 export default function FirstSection() {
-  const [text] = useTypewriter({
-    words: ["Educates Customers", "Builds Brand", "Engages Viewers"],
-    loop: {},
-  });
   return (
     <div className="text-white md:my-44 my-24 mx-0">
       <div className="flex md:flex-row flex-col justify-between">
-        <div className="">
-          <h1 className="md:text-[9vh] text-[4vh] font-[400] tracking-wide leading-[40px] md:leading-[85px]">
-            Create <br /> Content That <br />
-            <span className="font-[600]">
-              <LinearGradient gradient={["to right", "#ffb701 ,#ff341e"]}>
-                {text}
-              </LinearGradient>
-              <Cursor cursorColor="#ff341e" />
-            </span>
-          </h1>
-          <button className="my-10 bg-gradient-to-br from-yellow-500 to-red-600 text-black font-semibold md:px-7 px-3 md:py-2.5 py-1.5 md:text-2xl text-md rounded">
-            Go Viral
-          </button>
+        <div className="font-antonio">
+          {/* <h1 className="md:text-[7vh] text-[3vh] font-[400]" style={{backgroundImage: "linear-gradient(to right, #000000, #7ED6DF)"}}>
+            From Concept To Creation -<br /> "Transforming Ideas into Captivating Visual Stories"
+          </h1> */}
+          <LinearGradient gradient={["to right","#7ED6DF,#808080"]} className="md:text-[5vh] text-[3vh] font-[400]">
+            From Concept To Creation -<br/> "Transforming Ideas into Captivating Visual Stories"
+          </LinearGradient><br/>
+          <LinearGradient gradient={["to right","#166D3B,#808080"]} className="md:text-[5vh] text-[3vh] font-[400] mt-[-10] font-antonio">
+            Crafting Your Digital Identity -<br/> "Let Us Amplify Your Presence on YouTube and Instagram"
+          </LinearGradient><br/>
+          <LinearGradient gradient={["to right","#923CB5,#808080"]} className="md:text-[5vh] text-[3vh] font-[400]">
+            "Your One-Stop <br/>Solution for Content Creation Success"
+          </LinearGradient>
         </div>
 
-        <div className="relative left-[350px] top-32 md:top-0 md:left-0">
-          <div className="md:w-56 w-32 md:h-56 h-32 relative md:bottom-24 bottom-32 right-72">
+        <div className="relative left-[190px] top-32 md:top-0 md:left-0">
+          <div className="md:w-56 w-42 md:h-56 h-30 relative md:bottom-24 bottom-32 left-12 md:left-[-35px]">
             <ImageCubeEffect
               images={images[1]}
               style={"md:h-56 h-32 w-full object-cover rounded-full"}
             />
           </div>
-          <div className="h-28 md:h-48 w-28 md:w-48 relative bottom-56 right-28 md:right-0">
+          <div className="h-28 md:h-48 w-28 md:w-48 relative top-[-30px] md:top-[-110px] bottom-10 md:left-48">
             <ImageCubeEffect
               images={images[2]}
               style={"md:h-48 h-28 w-full object-cover rounded-full"}
             />
           </div>
-          <div className="w-44 md:w-64 h-44 md:h-64 relative bottom-56 right-56">
+          <div className="w-44 md:w-64 h-44 md:h-64 relative bottom-56 right-66 md:left-[-70px]">
             <ImageCubeEffect
               images={images[3]}
               style={"md:h-64 h-44 w-44 md:w-64 object-cover rounded-full"}
@@ -95,43 +91,40 @@ export default function FirstSection() {
             Trust Us
           </LinearGradient>
         </h1>
-        <TwoCardsEffect
-          rotate={"rotate-[2deg]"}
-          children={
-            <Swiper
-              loop={true}
-              slidesPerView={4}
-              centeredSlides={false}
-              slidesPerGroupSkip={1}
-              grabCursor={true}
-              keyboard={{
-                enabled: true,
-              }}
-              autoplay={true}
-              breakpoints={{
-                769: {
-                  slidesPerView: 4,
-                  slidesPerGroup: 1,
-                },
-              }}
+        <TwoCardsEffect rotate={"rotate-[2deg]"}> 
+          <Swiper
+            loop={true}
+            slidesPerView={4}
+            centeredSlides={false}
+            slidesPerGroupSkip={1}
+            grabCursor={true}
+            keyboard={{
+              enabled: true,
+            }}
+            autoplay={true}
+            breakpoints={{
+              769: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+              },
+            }}
               navigation={{
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-              spaceBetween={120}
-              modules={[Keyboard, Navigation, Autoplay]}
-              className="mySwiper px-20 py-10 "
-            >
-              {brands.map((el, i) => (
-                <SwiperSlide key={i} className="">
-                  <img src={el} className="h-44 w-44 object-contain " alt="" />
-                </SwiperSlide>
-              ))}
-              <div className="swiper-button-next text-slate-100 animate-bounce-left"></div>
-              <div className="swiper-button-prev text-slate-100 animate-bounce-right"></div>
-            </Swiper>
-          }
-        />
+            spaceBetween={120}
+            modules={[Keyboard, Navigation, Autoplay]}
+            className="mySwiper px-20 py-10"
+          >
+          {brands.map((el, i) => (
+            <SwiperSlide key={i} className="">
+              <img src={el} className="h-44 w-44 object-contain" alt="" />
+            </SwiperSlide>
+          ))}
+          <div className="swiper-button-next text-slate-100 animate-bounce-left"></div>
+          <div className="swiper-button-prev text-slate-100 animate-bounce-right"></div>
+          </Swiper>
+        </TwoCardsEffect>
       </div>
     </div>
   );

@@ -3,32 +3,40 @@ import ServiceCard from "../components/ServiceCard";
 import { LinearGradient } from "react-text-gradients";
 import ClientCard from "../components/ClientCard";
 
-const cards = [
+const imp_cards = [
   {
-    h: "Content Production",
-    p: "Our team will shoot high quality videos for your content.",
+    h: "Research & Writing",
+    p: "For each content, we will do the research and write compelling copies for you.",
+    images : "https://growthrocket.media/_next/image?url=%2Ft111.jpg&w=384&q=75"
   },
   {
     h: "Video Editing",
     p: "We will create captivating videos using fast paced video editing.",
   },
   {
-    h: "Research & Writing",
-    p: "For each content, we will do the research and write compelling copies for you.",
-  },
+    h: "Thumbnail Designing",
+    p: "For each particular content we will design thumbnails accordingly",
+  }
+];
+
+const more_cards = [
   {
-    h: "Graphics Designing",
+    h: "vertical content",
     p: "Our visual design experts will create aesthetic designs that stand out",
   },
   {
-    h: "Meme Marketing",
-    p: "Ideate and create relatable memes that resonated with the audience",
+    h: "360 Youtube",
+    p: "Ideate and create relatable videos that resonated with the audience in youtube",
   },
   {
-    h: "Social Media Management",
-    p: "End-to-end social media management to optimize content and drive engagement",
+    h: "360 Instagram",
+    p: "End-to-end social media management to optimize content and drive engagement.",
   },
-];
+  {
+    h: "Graphic Designing",
+    p: "Graphic Designing specializes in crafting captivating the innovative ideas.",
+  },
+]
 
 const clients = [
   {
@@ -57,10 +65,18 @@ export default function Services() {
       <h1 className="text-4xl md:text-[55px] font-medium tracking-tight leading-[35px] md:leading-[60px]">
         Here's what we will do for you
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-16 gap-x-36 gap-y-14 px-8 md:px-0">
-        {cards.map((e, i) => (
-          <ServiceCard key={i} h={e.h} p={e.p} />
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-16 gap-x-40 gap-y-40 px-8 md:px-0">
+        {imp_cards.map((e, i) => (
+          <ServiceCard key={i} h={e.h} p={e.p}/>
         ))}
+      </div>
+      <h1 className="text-4xl md:text-[45px] mt-56 mb-36 font-small tracking-tight leading-[35px] md:leading-[60px]">
+          Here some more services that we provide
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-x-30 gap-x-16 gap-y-16 md:gap-y-30 px-8 md:px-0"> 
+          {more_cards.map((e, i) => (
+            <ServiceCard key={i} h={e.h} p={e.p} className="flex justify-center items-center w-full h-full"/>
+          ))}
       </div>
 
       <div className="my-56">
